@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 style="text-align:center;">{{titulo}}</h1>
+<br>
+<div class="formulario" style="text-align:center;">
+  <form>
+    <input type="text" name="nombre" [(ngModel)]="nombre" placeholder="ingresa un nombre">
+    <br>
+    <br>
+    <input type="text" name="apellido" [(ngModel)]="apellido" placeholder="ingresa un apellido">
+    <br>
+    <br>
+    <input type="text" name="cargo" [(ngModel)]="cargo" placeholder="ingresa un cargo">
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary" (click)="registrarUsuarios()">Registrarse</button>
+    
+  </form>
+</div>
+
+<br>
+<h3 *ngIf="registrado; else sinRegistrar" style="text-align:center;">{{mensaje}} {{nombre}} {{apellido}} y tiene el cargo de <span [ngClass]="{paraGerentes:cargo=='gerente'}">{{cargo}}</span></h3>
+
+
+<!-- <h3 *ngIf="registrado; else sinRegistrar" style="text-align:center;">{{mensaje}} {{nombre}} {{apellido}} y tiene el cargo de <span [ngStyle]="{color: cargo=='gerente' ? 'red' : 'white'}">{{cargo}}</span></h3>
+aplicando la directiva ngStyle y operador ternario  -->
+
+<ng-template #sinRegistrar>
+    <h3 style="text-align:center;">Sin Registrar!</h3>
+</ng-template>
+
+<!-- <br>
+<br>
+
+<ul>
+  <li *ngFor="let entrada of entradas">{{entrada.title}}</li>
+</ul> -->
+</div>

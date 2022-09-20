@@ -1,0 +1,11 @@
+h1{
+    padding-top: 10%;
+}
+
+.paraGerentes{
+    color: red;
+    font-weight: bold;    
+    /* negrita */
+    text-decoration: underline;
+    /* subrayada */
+}
